@@ -1,3 +1,9 @@
 export EDITOR=nvim
 alias he='$EDITOR $HOME/home-manager-repo/home.nix'
 alias hs='home-manager switch'
+alias hg='home-manager generations'
+
+source $HOME/.nix-profile/share/antidote/antidote.zsh
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+
+eval "$(starship init zsh)"

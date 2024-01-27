@@ -4,6 +4,7 @@
   imports = [
     ./config/git.nix
     ./config/zsh.nix
+    ./config/prompt.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -31,7 +32,7 @@
     solargraph
     homesick
     rustup
-    antigen
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
