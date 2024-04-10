@@ -5,6 +5,9 @@
     ./config/git.nix
     ./config/zsh.nix
     ./config/prompt.nix
+    ./config/tmux.nix
+    ./config/wezterm.nix
+    ./config/tools.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -24,15 +27,26 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    neovim
-    git
-    tmux
+    awscli2
+		byobu
+    docker
+    docker-compose
     fzf
-    starship
-    solargraph
+    git
+    google-cloud-sdk
+		helix
     homesick
+    k9s
+    kubectl
+    kubernetes-helm
+		lazydocker
+		lazygit
+    neovim
+    ripgrep
     rustup
-
+    solargraph
+    starship
+		wezterm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -43,6 +57,7 @@
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:

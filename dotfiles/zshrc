@@ -1,9 +1,13 @@
 export EDITOR=nvim
-alias he='$EDITOR $HOME/home-manager-repo/home.nix'
+alias he='$EDITOR $HOME/home-manager/home.nix'
 alias hs='home-manager switch'
 alias hg='home-manager generations'
 
 source $HOME/.nix-profile/share/antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+
+export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
+
+bindkey "^R" history-incremental-pattern-search-backward
 
 eval "$(starship init zsh)"
