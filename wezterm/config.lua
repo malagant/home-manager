@@ -26,8 +26,8 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 return {
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	font = wezterm.font("JetBrainsMono Nerd Font"),
-	font_size = 18.0,
+	font = wezterm.font("Iosevka Nerd Font"),
+	font_size = 20.0,
 	enable_tab_bar = true,
 	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 		local edge_background = "#0b0022"
