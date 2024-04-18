@@ -30,7 +30,7 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source "/nix/store/3l1bn8zr7g8c5655pqvcp4l0mh3g7i7j-fzf-git-sh-unstable-2022-09-30/share/fzf-git-sh/fzf-git.sh"
+source "$HOME/.nix-profile/share/fzf-git-sh/fzf-git.sh"
 # --- setup fzf theme ---
 fg="#CBE0F0"
 bg="#011628"
