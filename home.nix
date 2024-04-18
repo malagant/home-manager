@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  username = "A92638031";
+in
 {
   imports = [
     ./config/git.nix
@@ -12,8 +14,8 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   programs.home-manager.enable = true;
-  home.username = "mjohann";
-  home.homeDirectory = "/Users/mjohann";
+  home.username = "${username}";
+  home.homeDirectory = "/Users/${username}";
   nixpkgs.config.allowUnfree = true;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -28,25 +30,31 @@
   # environment.
   home.packages = with pkgs; [
     awscli2
-		byobu
+    bat
+    delta
+    byobu
     docker
     docker-compose
+    fd
     fzf
+    fzf-git-sh
     git
     google-cloud-sdk
-		helix
+    helix
     homesick
     k9s
     kubectl
     kubernetes-helm
-		lazydocker
-		lazygit
+    lazydocker
+    lazygit
+    neofetch
     neovim
     ripgrep
     rustup
     solargraph
     starship
-		wezterm
+    tldr
+    wezterm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -57,7 +65,13 @@
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-     (nerdfonts.override { fonts = [ "Iosevka" "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "Noto"
+        "Iosevka"
+        "JetBrainsMono"
+      ];
+    })
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
