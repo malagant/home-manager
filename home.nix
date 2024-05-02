@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  username = "A92638031";
+  username = "mjohann";
 in
 {
   imports = [
@@ -54,6 +54,7 @@ in
     solargraph
     starship
     tldr
+		yazi
     wezterm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
