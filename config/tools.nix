@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 {
   programs = {
     bat = {
@@ -8,6 +8,7 @@
       enable = true;
     };
     fzf = {
+      package = unstable.fzf;
       tmux = {
         enableShellIntegration = true;
       };

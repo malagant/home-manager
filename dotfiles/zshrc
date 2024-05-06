@@ -1,8 +1,19 @@
 export EDITOR=nvim
-alias he='$EDITOR $HOME/home-manager/home.nix'
+alias he='home-manager edit'
 alias hs='home-manager switch'
 alias hg='home-manager generations'
 alias zs='source $HOME/.zshrc'
+
+eval "$(fzf --zsh)"
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 source $HOME/.nix-profile/share/antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
@@ -31,18 +42,9 @@ _fzf_compgen_dir() {
 }
 
 source "$HOME/.nix-profile/share/fzf-git-sh/fzf-git.sh"
-# --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
 
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
-
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
 # - You should make sure to pass the rest of the arguments to fzf.
@@ -58,4 +60,9 @@ _fzf_comprun() {
   esac
 }
 
-eval "$(fzf --zsh)"
+export BAT_THEME=tokyonight_night
+
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+eval "$(zoxide init zsh)"
+
+alias cd="z"

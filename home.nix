@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  username = "mjohann";
+  username = "A92638031";
 in
 {
   imports = [
@@ -23,8 +23,8 @@ in
   #
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
+  home.stateVersion = "23.11"; # Please read the comment before changing.
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -54,7 +54,7 @@ in
     solargraph
     starship
     tldr
-		yazi
+    vial
     wezterm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
